@@ -10,9 +10,10 @@ const refs = {
 
 createPaletteItems();
 function createPaletteItems() {
-    const items = galleryItems.map(
-      (item) => `<div class="gallery__item">
-  <a class="gallery__link" href="large-image.jpg">
+    const items = galleryItems
+      .map(
+        (item) => `<div class="gallery__item">
+  <a class="gallery__link" href="#">
     <img
       class="gallery__image"
       src="${item.original}"
@@ -20,10 +21,25 @@ function createPaletteItems() {
       alt="${item.description}"
     />
   </a>
-</div>`).join('');
+</div>`
+      )
+      .join("");
     refs.gallery.insertAdjacentHTML("beforeend",  items);
 }
 
+
+
+refs.gallery.addEventListener("click", selectColorItem);
+function selectColorItem(event) {
+   console.log(event.target.nodeName);
+    
+    if (event.target.nodeName !== "IMG") {
+      return;
+    } 
+
+
+
+}
 
 console.log(galleryItems);
 
