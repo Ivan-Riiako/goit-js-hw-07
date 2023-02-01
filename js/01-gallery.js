@@ -16,8 +16,8 @@ function createPaletteItems() {
   <a class="gallery__link" href="#">
     <img
       class="gallery__image"
-      src="${original}"
-      data-source="${preview}"
+      src="${preview}"
+      data-source="${original}"
       alt="${description}"
     />
   </a>
