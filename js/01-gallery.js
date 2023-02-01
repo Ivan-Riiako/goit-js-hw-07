@@ -12,13 +12,13 @@ createPaletteItems();
 function createPaletteItems() {
     const items = galleryItems
       .map(
-        (item) => `<div class="gallery__item">
+        ({ original, preview, description }) => `<div class="gallery__item">
   <a class="gallery__link" href="#">
     <img
       class="gallery__image"
-      src="${item.original}"
-      data-source="${item.preview}"
-      alt="${item.description}"
+      src="${original}"
+      data-source="${preview}"
+      alt="${description}"
     />
   </a>
 </div>`
