@@ -34,18 +34,17 @@ function selectColorItem(event) {
     return;
   }
   const imgBig = event.target.dataset.source;
-  console.log(imgBig);
-  const link = event.target.closest(".gallery__link");
-  
+  //
 
-const instance =
-  basicLightbox.create(`<img src="${imgBig}" width="800" height="600">
+  const instance =
+    basicLightbox.create(`<img src="${imgBig}" width="800" height="600">
 `);
 
-instance.show()
+  instance.show();
 
-
-
+  // console.log(imgBig);
+  // const link = event.target.closest(".gallery__link");
+  
   // console.log(link.href);
   // const queryLink = document.querySelector(`a[href="${link.href}"]`);
 
@@ -57,7 +56,7 @@ instance.show()
   //   e.stopPropagation();
   //   e.stopImmediatePropagation();
   // }
-  
+
   // event.stopPropagation();
 
   // event.stopImmediatePropagation();
