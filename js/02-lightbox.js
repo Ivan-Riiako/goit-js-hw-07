@@ -22,7 +22,13 @@ function createPaletteItems() {
   refs.gallery.insertAdjacentHTML("beforeend", items);
 }
 createPaletteItems();
+
 var lightbox = new SimpleLightbox(".gallery a", {
-    /* options */
-    
+  /* options */
+  fadeSpeed: 300,
+  captions: true,
+  captionSelector: "img",
+//   captionType: "alt",
+  captionsData:'alt',
 });
+
