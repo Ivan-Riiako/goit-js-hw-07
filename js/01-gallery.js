@@ -41,11 +41,11 @@ function selectColorItem(event) {
     basicLightbox.create(`<img src="${imgBig}" width="800" height="600">`);
   instance.show();
 
-  document.addEventListener("keydown", clouse => {
+  document.addEventListener("keydown", event => {
     if (event.code === "Escape") {
-      instance.clouse()
+      instance.close();
     }
-  })
+  });
 
 }
 
