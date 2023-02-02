@@ -12,7 +12,7 @@ createPaletteItems();
 function createPaletteItems() {
     const items = galleryItems
       .map(
-        ({ original, preview, description }) => `<div class="gallery__item">
+        ({ preview, original, description }) => `<div class="gallery__item">
   <a class="gallery__link" href="${original}">
     <img
       class="gallery__image"
@@ -27,31 +27,40 @@ function createPaletteItems() {
     refs.gallery.insertAdjacentHTML("beforeend",  items);
 }
 
-
-
 refs.gallery.addEventListener("click", selectColorItem);
+
 function selectColorItem(event) {
   if (event.target.nodeName !== "IMG") {
     return;
   }
+  const imgBig = event.target.dataset.source;
+  console.log(imgBig);
   const link = event.target.closest(".gallery__link");
-  console.log(link.href);
-  const queryLink = document.querySelector(`a[href="${link.href}"]`);
+  
 
-  queryLink.addEventListener("click", onDefault);
-  function onDefault(e) {
-    console.log(e);
-     e.target.stopPropagation();
-     e.currentTarget.stopImmediatePropagation();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-  }
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
+const instance =
+  basicLightbox.create(`<img src="${imgBig}" width="800" height="600">
+`);
+
+instance.show()
+
+
+
+  // console.log(link.href);
+  // const queryLink = document.querySelector(`a[href="${link.href}"]`);
+
+  // queryLink.addEventListener("click", onDefault);
+  // function onDefault(e) {
+  //   console.log(e);
+  //    e.target.stopPropagation();
+  //    e.currentTarget.stopImmediatePropagation();
+  //   e.stopPropagation();
+  //   e.stopImmediatePropagation();
+  // }
+  
   // event.stopPropagation();
 
-  event.stopImmediatePropagation();
+  // event.stopImmediatePropagation();
 }
 
 console.log(galleryItems);
