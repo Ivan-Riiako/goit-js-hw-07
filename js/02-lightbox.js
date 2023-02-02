@@ -25,10 +25,9 @@ createPaletteItems();
 
 var lightbox = new SimpleLightbox(".gallery a", {
   /* options */
-  fadeSpeed: 300,
-  captions: true,
-  captionSelector: "img",
-//   captionType: "alt",
-  captionsData:'alt',
+  //   captions: true,
+  //   captionSelector: "img",
+  captionsData: "alt",
+  captionDelay:250,
 });
 
