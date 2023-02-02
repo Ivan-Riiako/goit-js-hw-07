@@ -30,6 +30,7 @@ function createPaletteItems() {
 refs.gallery.addEventListener("click", selectColorItem);
 
 function selectColorItem(event) {
+  event.preventDefault();
   if (event.target.nodeName !== "IMG") {
     return;
   }
@@ -44,7 +45,7 @@ function selectColorItem(event) {
 
   // console.log(imgBig);
   // const link = event.target.closest(".gallery__link");
-  
+
   // console.log(link.href);
   // const queryLink = document.querySelector(`a[href="${link.href}"]`);
 
