@@ -29,25 +29,6 @@ function createPaletteItems() {
   refs.gallery.insertAdjacentHTML("beforeend", items);
 }
 createPaletteItems();
-
-refs.gallery.addEventListener("click", selectColorItem);
-
-function selectColorItem(event) {
-  event.preventDefault();
-
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-
-  const imgBig = event.target.dataset.source;
-  const instance = basicLightbox.create(
-    `<img src="${imgBig}" width="800" height="600">`
-  );
-  instance.show();
-
-  document.addEventListener("keydown", ({ code }) => {
-    if (code === "Escape") {
-      instance.close();
-    }
-  });
-}
+var lightbox = new SimpleLightbox(".gallery a", {
+  /* options */
+});
