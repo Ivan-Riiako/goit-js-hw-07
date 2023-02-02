@@ -30,20 +30,24 @@ function createPaletteItems() {
 refs.gallery.addEventListener("click", selectColorItem);
 
 function selectColorItem(event) {
-
   event.preventDefault();
+
   if (event.target.nodeName !== "IMG") {
     return;
   }
-  const imgBig = event.target.dataset.source;
-  //
 
+  const imgBig = event.target.dataset.source;
   const instance =
     basicLightbox.create(`<img src="${imgBig}" width="800" height="600">`);
   instance.show();
+
+  document.addEventListener("keydown", clouse => {
+    if (event.code === "Escape") {
+      instance.clouse()
+    }
+  })
+
 }
 
 console.log(galleryItems);
-
-
 
