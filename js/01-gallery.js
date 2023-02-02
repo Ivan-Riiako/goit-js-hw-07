@@ -1,10 +1,10 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
+console.log(galleryItems);
+
+
 const refs = {
   gallery: document.querySelector("div.gallery"),
-
-  //   btnCreateBoxes: document.querySelector("button[data-create]"),
-  //   btnDestroyBoxes: document.querySelector("button[data-destroy]"),
 };
 
 createPaletteItems();
@@ -25,6 +25,7 @@ function createPaletteItems() {
     .join("");
   refs.gallery.insertAdjacentHTML("beforeend", items);
 }
+
 
 refs.gallery.addEventListener("click", selectColorItem);
 
@@ -48,4 +49,3 @@ function selectColorItem(event) {
   });
 }
 
-console.log(galleryItems);
