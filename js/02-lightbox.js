@@ -3,13 +3,6 @@ import { galleryItems } from './gallery-items.js';
 
 console.log(galleryItems);
 
-
-{/* <a class="gallery__item" href="large-image.jpg">
-  <img class="gallery__image" src="small-image.jpg" alt="Image description" />
-</a>;
- */}
-
-
 const refs = {
   gallery: document.querySelector("ul.gallery"),
 };
@@ -30,5 +23,6 @@ function createPaletteItems() {
 }
 createPaletteItems();
 var lightbox = new SimpleLightbox(".gallery a", {
-  /* options */
+    /* options */
+    
 });
