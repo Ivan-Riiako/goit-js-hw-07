@@ -13,7 +13,7 @@ function createPaletteItems() {
     const items = galleryItems
       .map(
         ({ original, preview, description }) => `<div class="gallery__item">
-  <a class="gallery__link" href="#">
+  <a class="gallery__link" href="${original}">
     <img
       class="gallery__image"
       src="${preview}"
@@ -31,14 +31,27 @@ function createPaletteItems() {
 
 refs.gallery.addEventListener("click", selectColorItem);
 function selectColorItem(event) {
-   console.log(event.target.nodeName);
-    
-    if (event.target.nodeName !== "IMG") {
-      return;
-    } 
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
+  const link = event.target.closest(".gallery__link");
+  console.log(link.href);
+  const queryLink = document.querySelector(`a[href="${link.href}"]`);
 
+  queryLink.addEventListener("click", onDefault);
+  function onDefault(e) {
+    console.log(e);
+     e.target.stopPropagation();
+     e.currentTarget.stopImmediatePropagation();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+  }
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
+  // event.stopPropagation();
 
-
+  event.stopImmediatePropagation();
 }
 
 console.log(galleryItems);
