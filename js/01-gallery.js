@@ -30,6 +30,7 @@ function createPaletteItems() {
 refs.gallery.addEventListener("click", selectColorItem);
 
 function selectColorItem(event) {
+
   event.preventDefault();
   if (event.target.nodeName !== "IMG") {
     return;
@@ -38,29 +39,8 @@ function selectColorItem(event) {
   //
 
   const instance =
-    basicLightbox.create(`<img src="${imgBig}" width="800" height="600">
-`);
-
+    basicLightbox.create(`<img src="${imgBig}" width="800" height="600">`);
   instance.show();
-
-  // console.log(imgBig);
-  // const link = event.target.closest(".gallery__link");
-
-  // console.log(link.href);
-  // const queryLink = document.querySelector(`a[href="${link.href}"]`);
-
-  // queryLink.addEventListener("click", onDefault);
-  // function onDefault(e) {
-  //   console.log(e);
-  //    e.target.stopPropagation();
-  //    e.currentTarget.stopImmediatePropagation();
-  //   e.stopPropagation();
-  //   e.stopImmediatePropagation();
-  // }
-
-  // event.stopPropagation();
-
-  // event.stopImmediatePropagation();
 }
 
 console.log(galleryItems);
