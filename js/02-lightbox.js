@@ -28,6 +28,7 @@ var lightbox = new SimpleLightbox(".gallery a", {
   //   captions: true,
   //   captionSelector: "img",
   captionsData: "alt",
-  captionDelay:250,
+  captionPosition: "bottom",
+  captionDelay: 250,
 });
 
