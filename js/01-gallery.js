@@ -28,18 +28,22 @@ function createPaletteItems() {
 
 
 refs.gallery.addEventListener("click", selectColorItem);
-OnShow(instance);
-// onclose()
 function selectColorItem(event) {
   event.preventDefault();
 
   if (event.target.nodeName !== "IMG") {
     return;
   }
-  onOpenModal(event);
-  onCloseKey(event);
+  // onOpenModal(event);
+  // onCloseKey(event);
   
-
+const imgBig = event.target.dataset.source;
+const instance = basicLightbox.create(
+  `<img src="${imgBig}" width="800" height="600">`
+)
+  
+  instance.show();
+  
   document.addEventListener("keydown", ({code}) => {
     if (code === "Escape") {
       instance.close();
@@ -47,11 +51,10 @@ function selectColorItem(event) {
   });
 }
 
-function onOpenModal(event) {
-const imgBig = event.target.dataset.source;
-const instance = basicLightbox.create(
-  `<img src="${imgBig}" width="800" height="600">`
-);
-instance.show();
-}
+// function onOpenModal(event) {
+// const imgBig = event.target.dataset.source;
+// const instance = basicLightbox.create(
+//   `<img src="${imgBig}" width="800" height="600">`
+// )
+// }
 
